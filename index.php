@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enigma Cloud - Профессиональный хостинг</title>
+    <link rel="icon" type="image/png" href="assets/img/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+    <link rel="shortcut icon" href="assets/img/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="EnigmaCloud" />
+    <link rel="manifest" href="assets/img/site.webmanifest" />
+    <link rel="stylesheet" href="assets/vendors/fonts/inter.css">
+    <link rel="stylesheet" href="assets/vendors/fontawesome-free-6.7.2-web/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="assets/js/script.js" defer></script>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <div class="logo-container">
+                    <img src="assets/img/favicon.svg" alt="Enigma Cloud" class="logo-img">
+                    <span class="logo-text">
+                        <span class="logo-main">Enigma</span>
+                        <span class="logo-sub">Cloud</span>
+                    </span>
+                </div>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="#features" class="nav-link"><i class="fas fa-server"></i> Хостинг</a></li>
+                <li><a href="#pricing" class="nav-link"><i class="fas fa-desktop"></i> VPS</a></li>
+                <li><a href="#" class="nav-link"><i class="fas fa-globe"></i> Домены</a></li>
+                <li><a href="#" class="nav-link"><i class="fas fa-headset"></i> Поддержка</a></li>
+                <li><a href="#" class="cta-btn"><i class="fas fa-user-circle"></i> Войти</a></li>
+            </ul>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Профессиональный <span class="text-gradient">хостинг</span> нового поколения</h1>
+            <p class="hero-subtitle">Высокопроизводительные серверы, безупречная надёжность и круглосуточная поддержка.
+                Запустите свой проект на лучшей платформе.</p>
+            <a href="#pricing" class="hero-cta">
+                <i class="fas fa-rocket"></i>
+                Начать сейчас
+            </a>
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-number">99.9%</span>
+                    <span class="stat-text">Uptime</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">24/7</span>
+                    <span class="stat-text">Поддержка</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Features Section -->
+        <section class="section" id="features">
+            <div class="section-header">
+                <h2 class="section-title">Почему <span class="text-gradient">Enigma Cloud</span></h2>
+                <p class="section-subtitle">Современные технологии и передовые решения для вашего бизнеса</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="feature-title">Молниеносная скорость</h3>
+                    <p class="feature-description">NVMe SSD диски, CDN Cloudflare и оптимизированные серверы
+                        обеспечивают максимальную производительность вашего сайта</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="feature-title">Максимальная безопасность</h3>
+                    <p class="feature-description">SSL сертификаты, DDoS защита, ежедневные резервные копии и мониторинг
+                        безопасности 24/7</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3 class="feature-title">Простое управление</h3>
+                    <p class="feature-description">Интуитивная панель управления cPanel, автоустановщик CMS и удобные
+                        инструменты разработчика</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3 class="feature-title">Экспертная поддержка</h3>
+                    <p class="feature-description">Команда профессионалов готова помочь в любое время. Техподдержка на
+                        русском языке без выходных</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="feature-title">Масштабируемость</h3>
+                    <p class="feature-description">Легкое увеличение ресурсов без простоев. От стартового хостинга до
+                        выделенных серверов</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <h3 class="feature-title">Бонусы включены</h3>
+                    <p class="feature-description">Бесплатный SSL, домен на год, миграция сайта и установка популярных
+                        CMS в один клик</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section class="section" id="pricing">
+            <div class="section-header">
+                <h2 class="section-title">Выберите <span class="text-gradient">свой план</span></h2>
+                <p class="section-subtitle">Гибкие тарифы для проектов любого масштаба</p>
+            </div>
+            <div class="pricing-grid">
+                <!-- Starter Plan -->
+                <div class="pricing-card">
+                    <div class="plan-name">Starter</div>
+                    <div class="plan-price">299₽</div>
+                    <div class="plan-period">в месяц</div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i> 1 сайт</li>
+                        <li><i class="fas fa-check"></i> 10 ГБ NVMe SSD</li>
+                        <li><i class="fas fa-check"></i> 100 ГБ трафика</li>
+                        <li><i class="fas fa-check"></i> Бесплатный SSL</li>
+                        <li><i class="fas fa-check"></i> cPanel управление</li>
+                        <li><i class="fas fa-check"></i> Ежедневные бэкапы</li>
+                        <li><i class="fas fa-check"></i> Техподдержка 24/7</li>
+                    </ul>
+                    <button class="plan-btn">Выбрать план</button>
+                </div>
+
+                <!-- Business Plan -->
+                <div class="pricing-card featured">
+                    <div class="popular-badge">Популярный</div>
+                    <div class="plan-name">Business</div>
+                    <div class="plan-price">699₽</div>
+                    <div class="plan-period">в месяц</div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i> 5 сайтов</li>
+                        <li><i class="fas fa-check"></i> 50 ГБ NVMe SSD</li>
+                        <li><i class="fas fa-check"></i> Безлимитный трафик</li>
+                        <li><i class="fas fa-check"></i> Бесплатный SSL</li>
+                        <li><i class="fas fa-check"></i> Приоритетная поддержка</li>
+                        <li><i class="fas fa-check"></i> CDN Cloudflare</li>
+                        <li><i class="fas fa-check"></i> Бесплатная миграция</li>
+                        <li><i class="fas fa-check"></i> SSH доступ</li>
+                    </ul>
+                    <button class="plan-btn primary">Выбрать план</button>
+                </div>
+
+                <!-- Professional Plan -->
+                <div class="pricing-card">
+                    <div class="plan-name">Professional</div>
+                    <div class="plan-price">1299₽</div>
+                    <div class="plan-period">в месяц</div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i> Безлимит сайтов</li>
+                        <li><i class="fas fa-check"></i> 200 ГБ NVMe SSD</li>
+                        <li><i class="fas fa-check"></i> Безлимитный трафик</li>
+                        <li><i class="fas fa-check"></i> Wildcard SSL</li>
+                        <li><i class="fas fa-check"></i> VIP поддержка</li>
+                        <li><i class="fas fa-check"></i> Premium CDN</li>
+                        <li><i class="fas fa-check"></i> Staging окружения</li>
+                        <li><i class="fas fa-check"></i> Git интеграция</li>
+                        <li><i class="fas fa-check"></i> WP-CLI доступ</li>
+                    </ul>
+                    <button class="plan-btn">Выбрать план</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Additional Info Section -->
+        <section class="section">
+            <div class="section-header">
+                <h2 class="section-title">Дополнительные <span class="text-gradient">возможности</span></h2>
+                <p class="section-subtitle">Всё что нужно для успешного проекта</p>
+            </div>
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3 class="info-title">Мощная инфраструктура</h3>
+                    <p class="info-description">Современные дата-центры уровня Tier III с резервированием всех систем
+                    </p>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3 class="info-title">Панель управления</h3>
+                    <p class="info-description">Интуитивная cPanel с русским интерфейсом и расширенным функционалом</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3 class="info-title">Быстрая миграция</h3>
+                    <p class="info-description">Бесплатный перенос сайтов с любого хостинга за 24 часа</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3 class="info-title">Защита данных</h3>
+                    <p class="info-description">Автоматические бэкапы, антивирус и DDoS защита включены</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3 class="info-title">CDN сеть</h3>
+                    <p class="info-description">Глобальная сеть доставки контента для ускорения сайта</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h3 class="info-title">Поддержка 24/7</h3>
+                    <p class="info-description">Русскоязычная техподдержка через чат, email и телефон</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-top">
+                <!-- Company Info -->
+                <div class="footer-company">
+                    <a href="#" class="footer-logo">
+                        <div class="footer-logo-container">
+                            <img src="assets/img/favicon.svg" alt="Enigma Cloud" class="footer-logo-img">
+                            <span class="footer-logo-text">
+                                <span class="footer-logo-main">Enigma</span>
+                                <span class="footer-logo-sub">Cloud</span>
+                            </span>
+                        </div>
+                    </a>
+                    <p class="company-description">
+                        Профессиональные услуги хостинга с 2009 года. Надёжная и высокопроизводительная платформа для
+                        развития вашего бизнеса в интернете.
+                    </p>
+
+                    <div class="footer-contact-grid">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Москва, Россия</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+7 (495) 123-45-67</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>info@enigmacloud.ru</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <span>24/7 поддержка</span>
+                        </div>
+                    </div>
+
+                    <div class="footer-social">
+                        <a href="#" class="social-link" title="Telegram">
+                            <i class="fab fa-telegram-plane"></i>
+                        </a>
+                        <a href="#" class="social-link" title="VKontakte">
+                            <i class="fab fa-vk"></i>
+                        </a>
+                        <a href="#" class="social-link" title="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link" title="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="#" class="social-link" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Services -->
+                <div class="footer-section">
+                    <h3><i class="fas fa-server"></i> Услуги</h3>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-globe"></i> Веб-хостинг</a></li>
+                        <li><a href="#"><i class="fas fa-desktop"></i> VPS серверы</a></li>
+                        <li><a href="#"><i class="fas fa-database"></i> Выделенные серверы</a></li>
+                        <li><a href="#"><i class="fas fa-cloud"></i> Облачные решения</a></li>
+                        <li><a href="#"><i class="fas fa-shield-alt"></i> SSL сертификаты</a></li>
+                        <li><a href="#"><i class="fas fa-search"></i> Домены</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div class="footer-section">
+                    <h3><i class="fas fa-headset"></i> Поддержка</h3>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-question-circle"></i> База знаний</a></li>
+                        <li><a href="#"><i class="fas fa-ticket-alt"></i> Система тикетов</a></li>
+                        <li><a href="#"><i class="fas fa-comments"></i> Онлайн чат</a></li>
+                        <li><a href="#"><i class="fas fa-phone"></i> Телефон</a></li>
+                        <li><a href="#"><i class="fas fa-book"></i> Документация</a></li>
+                        <li><a href="#"><i class="fas fa-video"></i> Обучение</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter & Links -->
+                <div class="footer-section">
+                    <h3><i class="fas fa-newspaper"></i> Новости</h3>
+
+                    <div class="newsletter-section">
+                        <div class="section-title">Подписка на рассылку</div>
+                        <div class="section-description">
+                            Получайте новости о скидках и новых услугах
+                        </div>
+                        <form class="newsletter-form">
+                            <input type="email" class="newsletter-input" placeholder="Ваш email" required>
+                            <button type="submit" class="newsletter-btn">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
+
+                    <ul>
+                        <li><a href="#"><i class="fas fa-file-alt"></i> Конфиденциальность</a></li>
+                        <li><a href="#"><i class="fas fa-gavel"></i> Соглашение</a></li>
+                        <li><a href="#"><i class="fas fa-info-circle"></i> О компании</a></li>
+                        <li><a href="#"><i class="fas fa-briefcase"></i> Карьера</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <div class="footer-copyright">
+                        © <?= date("Y") ?> <span class="text-gradient">Enigma Cloud</span>. Все права защищены.
+                    </div>
+                    <div class="footer-links">
+                        <a href="#">Политика cookies</a>
+                        <a href="#">Карта сайта</a>
+                        <a href="#">Партнёрам</a>
+                        <a href="#">API</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
