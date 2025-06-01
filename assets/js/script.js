@@ -1,5 +1,5 @@
-
 'use strict';
+
 document.addEventListener('DOMContentLoaded', function() {
     initializeApp();
 });
@@ -12,6 +12,8 @@ function initializeApp() {
     initAnimations();
     initCounters();
     initMobileMenu();
+    initScrollToTop();
+    fadeInPage();
 }
 
 // Navbar scroll effect
@@ -34,17 +36,32 @@ function initNavbar() {
 function initSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                const offsetTop = target.offsetTop - 80; // Account for navbar height
-                window.scrollTo({
-                    top: offsetTop,
-                    behavior: 'smooth'
-                });
+            const href = this.getAttribute('href');
+            if (href !== '#' && href.length > 1) {
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) {
+                    const offsetTop = target.offsetTop - 80; // Account for navbar height
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
             }
         });
     });
+
+    // Logo click to top
+    const logo = document.querySelector('.logo');
+    if (logo) {
+        logo.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
 }
 
 // Newsletter form handling
@@ -57,7 +74,6 @@ function initNewsletterForm() {
             const email = emailInput.value;
             
             if (isValidEmail(email)) {
-                // Show success message
                 showNotification('Спасибо за подписку! Мы будем присылать вам самые интересные новости.', 'success');
                 emailInput.value = '';
             } else {
@@ -174,7 +190,7 @@ function initAnimations() {
     }, observerOptions);
     
     // Observe animation elements
-    document.querySelectorAll('.feature-card, .pricing-card, .info-card').forEach(el => {
+    document.querySelectorAll('.feature-card, .pricing-card, .info-card, .stat-item').forEach(el => {
         el.style.cssText += `
             opacity: 0;
             transform: translateY(30px);
@@ -236,14 +252,8 @@ function initCounters() {
                             counter.textContent = current.toFixed(1) + '%';
                         }, 20);
                     }, 200);
-                } else if (text.includes('50K+')) {
-                    counter.textContent = '0';
-                    setTimeout(() => animateCounter(counter, 50000), 400);
                 } else if (text.includes('24/7')) {
                     // No animation for 24/7
-                } else if (text.includes('15')) {
-                    counter.textContent = '0';
-                    setTimeout(() => animateCounter(counter, 15), 600);
                 }
                 
                 observer.unobserve(counter);
@@ -256,8 +266,8 @@ function initCounters() {
 
 // Mobile menu functionality
 function initMobileMenu() {
-    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-    const navMenu = document.querySelector('.nav-menu');
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const navMenu = document.getElementById('navMenu');
     
     if (mobileMenuBtn && navMenu) {
         let isMenuOpen = false;
@@ -302,6 +312,38 @@ function initMobileMenu() {
             if (e.target.tagName === 'A' && isMenuOpen) {
                 mobileMenuBtn.click();
             }
+        });
+    }
+}
+
+// Scroll to top functionality
+function initScrollToTop() {
+    const scrollToTopBtn = document.querySelector('.scroll-to-top');
+    
+    if (scrollToTopBtn) {
+        // Show/hide button on scroll
+        window.addEventListener('scroll', function() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > 300) {
+                scrollToTopBtn.classList.add('visible');
+            } else {
+                scrollToTopBtn.classList.remove('visible');
+            }
+        }, { passive: true });
+        
+        // Click handler
+        scrollToTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+            const handleScroll = () => {
+              if (window.pageYOffset === 0) {
+                  scrollToTopBtn.classList.remove('visible');
+                  window.removeEventListener('scroll', handleScroll);
+              }
+          };
         });
     }
 }

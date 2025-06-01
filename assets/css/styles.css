@@ -1,5 +1,4 @@
 :root {
-  /* Темно-голубая цветовая палитра */
   --primary-dark: #0f172a;
   --primary-blue: #1e293b;
   --secondary-blue: #334155;
@@ -21,6 +20,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -276,6 +276,14 @@ body {
   background: rgba(255, 255, 255, 0.05);
   border-radius: 1rem;
   border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  transform: translateY(0);
+}
+
+.stat-item:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--accent-blue);
 }
 
 .stat-number {
@@ -335,6 +343,7 @@ body {
   padding: 2.5rem;
   text-align: center;
   transition: all 0.3s ease;
+  transform: translateY(0);
   position: relative;
   overflow: hidden;
 }
@@ -391,9 +400,11 @@ body {
   text-align: center;
   position: relative;
   transition: all 0.3s ease;
+  transform: translateY(0);
 }
 
 .pricing-card.featured {
+  transition: all 0.3s ease;
   transform: scale(1.05);
   border: 2px solid var(--accent-blue);
   box-shadow: var(--shadow-blue);
@@ -504,6 +515,7 @@ body {
   padding: 2rem;
   text-align: center;
   transition: all 0.3s ease;
+  transform: translateY(0);
 }
 
 .info-card:hover {
@@ -726,7 +738,7 @@ body {
 
 .footer-section ul li a:hover {
   color: var(--accent-blue);
-  padding-left: 0.75rem;
+  padding-left: 0.2rem;
 }
 
 .footer-section ul li a i {
@@ -810,7 +822,6 @@ body {
   box-shadow: 0 8px 25px rgba(14, 165, 233, 0.3);
 }
 
-/* Social links */
 .footer-social {
   display: flex;
   gap: 0.75rem;
@@ -899,7 +910,6 @@ body {
   color: var(--accent-blue);
 }
 
-/* Адаптивность футера */
 @media (max-width: 1024px) {
   .footer-top {
     grid-template-columns: 1fr 1fr;
@@ -913,7 +923,6 @@ body {
   }
 }
 
-/* Общая адаптивность */
 @media (max-width: 768px) {
   .nav-menu {
     display: none;
@@ -960,7 +969,14 @@ body {
     gap: 1.5rem;
   }
   
-  /* Footer адаптивность */
+  .scroll-to-top {
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    font-size: 1.1rem;
+  }
+  
   .footer {
     margin-top: 4rem;
   }
@@ -1034,6 +1050,14 @@ body {
     padding: 0 0.5rem;
   }
   
+  .scroll-to-top {
+    bottom: 15px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+  
   .logo-img {
     width: 30px;
     height: 30px;
@@ -1048,10 +1072,127 @@ body {
   }
   
   .logo-text {
-    display: none; /* Скрываем текст на очень маленьких экранах */
+    display: none; 
   }
   
   .logo-container {
     gap: 0;
   }
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--primary-dark);
+  border-radius: 10px;
+  border: 1px solid var(--border-light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gradient-accent);
+  border-radius: 10px;
+  border: 2px solid var(--primary-dark);
+  transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 50%, #075985 100%);
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(14, 165, 233, 0.5);
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: linear-gradient(135deg, #075985 0%, #0284c7 50%, #0ea5e9 100%);
+}
+
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent-blue) var(--primary-dark);
+  scroll-behavior: smooth;
+}
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: var(--gradient-accent);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  box-shadow: var(--shadow-blue);
+}
+
+.scroll-to-top.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scroll-to-top:hover {
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 15px 35px rgba(14, 165, 233, 0.5);
+}
+
+.plan-features::-webkit-scrollbar {
+  width: 6px;
+}
+
+.plan-features::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 3px;
+}
+
+.plan-features::-webkit-scrollbar-thumb {
+  background: var(--accent-blue);
+  border-radius: 3px;
+  border: none;
+}
+
+.plan-features::-webkit-scrollbar-thumb:hover {
+  background: var(--light-blue);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-on-scroll {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+a, button, input, textarea, select {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+*:focus {
+  outline: 2px solid var(--accent-blue);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.cta-btn:focus,
+.plan-btn:focus,
+.hero-cta:focus,
+.newsletter-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.3);
 } 

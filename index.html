@@ -10,10 +10,12 @@
     <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="EnigmaCloud" />
     <link rel="manifest" href="assets/img/site.webmanifest" />
+    <link rel="preload" href="assets/vendors/fonts/inter.css" as="style">
+    <link rel="preload" href="assets/css/styles.css" as="style">
+    <link rel="preload" href="assets/js/script.js" as="script">
     <link rel="stylesheet" href="assets/vendors/fonts/inter.css">
     <link rel="stylesheet" href="assets/vendors/fontawesome-free-6.7.2-web/css/all.min.css">
     <link rel="stylesheet" href="assets/css/styles.css">
-    <script src="assets/js/script.js" defer></script>
 </head>
 <body>
     <nav class="navbar" id="navbar">
@@ -27,14 +29,14 @@
                     </span>
                 </div>
             </a>
-            <ul class="nav-menu">
+            <ul class="nav-menu" id="navMenu">
                 <li><a href="#features" class="nav-link"><i class="fas fa-server"></i> Хостинг</a></li>
                 <li><a href="#pricing" class="nav-link"><i class="fas fa-desktop"></i> VPS</a></li>
                 <li><a href="#" class="nav-link"><i class="fas fa-globe"></i> Домены</a></li>
                 <li><a href="#" class="nav-link"><i class="fas fa-headset"></i> Поддержка</a></li>
                 <li><a href="#" class="cta-btn"><i class="fas fa-user-circle"></i> Войти</a></li>
             </ul>
-            <button class="mobile-menu-btn">
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
@@ -42,7 +44,8 @@
     <section class="hero">
         <div class="hero-content">
             <h1>Профессиональный <span class="text-gradient">хостинг</span> нового поколения</h1>
-            <p class="hero-subtitle">Высокопроизводительные серверы, безупречная надёжность и круглосуточная поддержка.
+            <p class="hero-subtitle">Высокопроизводительные серверы, безупречная надёжность и круглосуточная
+                поддержка.
                 Запустите свой проект на лучшей платформе.</p>
             <a href="#pricing" class="hero-cta">
                 <i class="fas fa-rocket"></i>
@@ -83,7 +86,8 @@
                         <i class="fas fa-shield-alt"></i>
                     </div>
                     <h3 class="feature-title">Максимальная безопасность</h3>
-                    <p class="feature-description">SSL сертификаты, DDoS защита, ежедневные резервные копии и мониторинг
+                    <p class="feature-description">SSL сертификаты, DDoS защита, ежедневные резервные копии и
+                        мониторинг
                         безопасности 24/7</p>
                 </div>
                 <div class="feature-card">
@@ -91,7 +95,8 @@
                         <i class="fas fa-cogs"></i>
                     </div>
                     <h3 class="feature-title">Простое управление</h3>
-                    <p class="feature-description">Интуитивная панель управления cPanel, автоустановщик CMS и удобные
+                    <p class="feature-description">Интуитивная панель управления cPanel, автоустановщик CMS и
+                        удобные
                         инструменты разработчика</p>
                 </div>
                 <div class="feature-card">
@@ -99,7 +104,8 @@
                         <i class="fas fa-headset"></i>
                     </div>
                     <h3 class="feature-title">Экспертная поддержка</h3>
-                    <p class="feature-description">Команда профессионалов готова помочь в любое время. Техподдержка на
+                    <p class="feature-description">Команда профессионалов готова помочь в любое время. Техподдержка
+                        на
                         русском языке без выходных</p>
                 </div>
                 <div class="feature-card">
@@ -107,7 +113,8 @@
                         <i class="fas fa-chart-line"></i>
                     </div>
                     <h3 class="feature-title">Масштабируемость</h3>
-                    <p class="feature-description">Легкое увеличение ресурсов без простоев. От стартового хостинга до
+                    <p class="feature-description">Легкое увеличение ресурсов без простоев. От стартового хостинга
+                        до
                         выделенных серверов</p>
                 </div>
                 <div class="feature-card">
@@ -115,7 +122,8 @@
                         <i class="fas fa-gift"></i>
                     </div>
                     <h3 class="feature-title">Бонусы включены</h3>
-                    <p class="feature-description">Бесплатный SSL, домен на год, миграция сайта и установка популярных
+                    <p class="feature-description">Бесплатный SSL, домен на год, миграция сайта и установка
+                        популярных
                         CMS в один клик</p>
                 </div>
             </div>
@@ -197,7 +205,8 @@
                         <i class="fas fa-server"></i>
                     </div>
                     <h3 class="info-title">Мощная инфраструктура</h3>
-                    <p class="info-description">Современные дата-центры уровня Tier III с резервированием всех систем
+                    <p class="info-description">Современные дата-центры уровня Tier III с резервированием всех
+                        систем
                     </p>
                 </div>
                 <div class="info-card">
@@ -205,7 +214,8 @@
                         <i class="fas fa-tools"></i>
                     </div>
                     <h3 class="info-title">Панель управления</h3>
-                    <p class="info-description">Интуитивная cPanel с русским интерфейсом и расширенным функционалом</p>
+                    <p class="info-description">Интуитивная cPanel с русским интерфейсом и расширенным функционалом
+                    </p>
                 </div>
                 <div class="info-card">
                     <div class="info-icon">
@@ -255,7 +265,8 @@
                         </div>
                     </a>
                     <p class="company-description">
-                        Профессиональные услуги хостинга с 2009 года. Надёжная и высокопроизводительная платформа для
+                        Профессиональные услуги хостинга с 2025 года. Надёжная и высокопроизводительная платформа
+                        для
                         развития вашего бизнеса в интернете.
                     </p>
 
@@ -326,26 +337,24 @@
                 <!-- Newsletter & Links -->
                 <div class="footer-section">
                     <h3><i class="fas fa-newspaper"></i> Новости</h3>
-
-                    <div class="newsletter-section">
-                        <div class="section-title">Подписка на рассылку</div>
-                        <div class="section-description">
-                            Получайте новости о скидках и новых услугах
-                        </div>
-                        <form class="newsletter-form">
-                            <input type="email" class="newsletter-input" placeholder="Ваш email" required>
-                            <button type="submit" class="newsletter-btn">
-                                <i class="fas fa-paper-plane"></i>
-                            </button>
-                        </form>
-                    </div>
-
                     <ul>
                         <li><a href="#"><i class="fas fa-file-alt"></i> Конфиденциальность</a></li>
                         <li><a href="#"><i class="fas fa-gavel"></i> Соглашение</a></li>
                         <li><a href="#"><i class="fas fa-info-circle"></i> О компании</a></li>
                         <li><a href="#"><i class="fas fa-briefcase"></i> Карьера</a></li>
                     </ul>
+
+                    <!-- Newsletter form -->
+                    <div class="newsletter-section">
+                        <h4 class="section-title">Подписка на новости</h4>
+                        <p class="section-description">Получайте последние новости и специальные предложения</p>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Ваш email" class="newsletter-input" required>
+                            <button type="submit" class="newsletter-btn">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
                 </div>
             </div>
 
@@ -364,6 +373,10 @@
             </div>
         </div>
     </footer>
-</body>
 
+    <button class="scroll-to-top" title="Наверх">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    <script src="assets/js/script.js"></script>
+</body>
 </html>
