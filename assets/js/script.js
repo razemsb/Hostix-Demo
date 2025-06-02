@@ -336,7 +336,6 @@ function initScrollToTop() {
     const scrollToTopBtn = document.querySelector('.scroll-to-top');
     
     if (scrollToTopBtn) {
-        
         window.addEventListener('scroll', function() {
             const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
             
@@ -347,18 +346,20 @@ function initScrollToTop() {
             }
         }, { passive: true });
         
-        
         scrollToTopBtn.addEventListener('click', function() {
             window.scrollTo({
                 top: 0,
                 behavior: 'smooth'
             });
+            
             const handleScroll = () => {
-              if (window.pageYOffset === 0) {
-                  scrollToTopBtn.classList.remove('visible');
-                  window.removeEventListener('scroll', handleScroll);
-              }
-          };
+                if (window.pageYOffset === 0) {
+                    scrollToTopBtn.classList.remove('visible');
+                    window.removeEventListener('scroll', handleScroll);
+                }
+            };
+            
+            window.addEventListener('scroll', handleScroll); 
         });
     }
 }
@@ -434,27 +435,81 @@ function initUserMenu() {
         dropdownItems.forEach(item => {
             item.addEventListener('click', (e) => {
                 e.preventDefault();
-                const text = item.querySelector('span').textContent;
-                
-                
-                switch(text) {
-                    case 'Мой профиль':
+                const itemId = item.getAttribute('id');
+                switch(itemId) {
+                    case 'mainPage':
+                        const href = item.getAttribute('href');
+                        showNotification('Переход на главную страницу...', 'info');
+                        setTimeout(() => {
+                            window.location.href = href;
+                        }, 700);
+                        break;
+                        
+                    case 'accountPage':
+                        const accountHref = item.getAttribute('href');
                         showNotification('Переход в профиль пользователя...', 'info');
+                        setTimeout(() => {
+                            window.location.href = accountHref;
+                        }, 700);
                         break;
-                    case 'Настройки':
-                        showNotification('Открытие настроек аккаунта...', 'info');
-                        break;
-                    case 'Мои услуги':
+                        
+                    case 'servicesPage':
                         showNotification('Переход к управлению услугами...', 'info');
                         break;
-                    case 'Биллинг':
+                        
+                    case 'billingPage':
                         showNotification('Открытие раздела биллинга...', 'info');
                         break;
-                    case 'Поддержка':
+                        
+                    case 'settingsPage':
+                        showNotification('Открытие настроек аккаунта...', 'info');
+                        break;
+                        
+                    case 'supportPage':
                         showNotification('Переход в службу поддержки...', 'info');
                         break;
-                    case 'Выйти':
+                        
+                    case 'logoutBtn':
                         handleLogout();
+                        break;
+                        
+                    default:
+                        const text = item.querySelector('span').textContent;
+                        switch(text) {
+                            case 'Главная':
+                                const mainHref = item.getAttribute('href');
+                                if (mainHref && mainHref !== '#') {
+                                    showNotification('Переход на главную страницу...', 'info');
+                                    setTimeout(() => {
+                                        window.location.href = mainHref;
+                                    }, 700);
+                                }
+                                break;
+                            case 'Мой профиль':
+                                const profileHref = item.getAttribute('href');
+                                if (profileHref && profileHref !== '#') {
+                                    showNotification('Переход в профиль пользователя...', 'info');
+                                    setTimeout(() => {
+                                        window.location.href = profileHref;
+                                    }, 700);
+                                }
+                                break;
+                            case 'Настройки':
+                                showNotification('Открытие настроек аккаунта...', 'info');
+                                break;
+                            case 'Мои услуги':
+                                showNotification('Переход к управлению услугами...', 'info');
+                                break;
+                            case 'Биллинг':
+                                showNotification('Открытие раздела биллинга...', 'info');
+                                break;
+                            case 'Поддержка':
+                                showNotification('Переход в службу поддержки...', 'info');
+                                break;
+                            case 'Выйти':
+                                handleLogout();
+                                break;
+                        }
                         break;
                 }
                 
@@ -478,13 +533,6 @@ function handleLogout() {
         
         setTimeout(() => {
             showNotification('Вы успешно вышли из аккаунта', 'success');
-            
-            
-            
-            
-            
-            
-            
             setTimeout(() => {
                 window.location.reload();
             }, 1500);

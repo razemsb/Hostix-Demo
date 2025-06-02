@@ -156,6 +156,7 @@ body {
   background: rgba(14, 165, 233, 0.1);
   color: var(--text-light);
   transform: translateX(2px);
+  border-radius: 0.75rem;
 }
 
 .nav-link:last-child {
@@ -558,17 +559,6 @@ body {
   right: 0;
   height: 1px;
   background: linear-gradient(90deg, transparent 0%, var(--accent-blue) 50%, transparent 100%);
-}
-
-.footer::after {
-  content: '';
-  position: absolute;
-  top: -50px;
-  left: 0;
-  right: 0;
-  height: 100px;
-  background: radial-gradient(circle at center, rgba(14, 165, 233, 0.1) 0%, transparent 70%);
-  pointer-events: none;
 }
 
 .footer-content {
@@ -1441,7 +1431,6 @@ a, button, input, textarea, select {
 }
 
 *:focus {
-  outline: 2px solid var(--accent-blue);
   outline-offset: 2px;
   border-radius: 4px;
 }
@@ -1728,7 +1717,6 @@ a, button, input, textarea, select {
     max-width: none;
   }
 }
-
 
 .nav-menu.mobile-active {
   display: flex !important;
