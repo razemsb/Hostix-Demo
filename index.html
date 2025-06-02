@@ -34,7 +34,52 @@
                 <li><a href="#pricing" class="nav-link"><i class="fas fa-desktop"></i> VPS</a></li>
                 <li><a href="#" class="nav-link"><i class="fas fa-globe"></i> Домены</a></li>
                 <li><a href="#" class="nav-link"><i class="fas fa-headset"></i> Поддержка</a></li>
-                <li><a href="#" class="cta-btn"><i class="fas fa-user-circle"></i> Войти</a></li>
+                <!-- неавторизованный -->
+                <!-- <li><a href="#" class="cta-btn"><i class="fas fa-user-circle"></i> Войти</a></li> -->
+
+                <!-- авторизованный -->
+                <li class="user-profile">
+                    <div class="username">
+                        <span>Иван И.</span>
+                    </div>
+                    <div class="user-avatar">ИИ</div>
+                    <div class="user-dropdown">
+                        <div class="dropdown-header">
+                            <div class="dropdown-user-name">Иван Иванов</div>
+                            <div class="dropdown-user-email">ivan.ivanov@example.com</div>
+                            <div class="user-status">
+                                <div class="status-dot"></div>
+                                <span>Онлайн</span>
+                            </div>
+                        </div>
+                        <div class="dropdown-menu">
+                            <a href="account.html" class="dropdown-item">
+                                <i class="fas fa-user"></i>
+                                <span>Мой профиль</span>
+                            </a>
+                            <a href="#" class="dropdown-item">
+                                <i class="fas fa-cog"></i>
+                                <span>Настройки</span>
+                            </a>
+                            <a href="#" class="dropdown-item">
+                                <i class="fas fa-server"></i>
+                                <span>Мои услуги</span>
+                            </a>
+                            <a href="#" class="dropdown-item">
+                                <i class="fas fa-credit-card"></i>
+                                <span>Биллинг</span>
+                            </a>
+                            <a href="#" class="dropdown-item">
+                                <i class="fas fa-headset"></i>
+                                <span>Поддержка</span>
+                            </a>
+                            <a href="#" class="dropdown-item danger">
+                                <i class="fas fa-sign-out-alt"></i>
+                                <span>Выйти</span>
+                            </a>
+                        </div>
+                    </div>
+                </li>
             </ul>
             <button class="mobile-menu-btn" id="mobileMenuBtn">
                 <i class="fas fa-bars"></i>
@@ -63,10 +108,7 @@
             </div>
         </div>
     </section>
-
-    <!-- Main Content -->
     <div class="main-content">
-        <!-- Features Section -->
         <section class="section" id="features">
             <div class="section-header">
                 <h2 class="section-title">Почему <span class="text-gradient">Enigma Cloud</span></h2>
@@ -128,15 +170,12 @@
                 </div>
             </div>
         </section>
-
-        <!-- Pricing Section -->
         <section class="section" id="pricing">
             <div class="section-header">
                 <h2 class="section-title">Выберите <span class="text-gradient">свой план</span></h2>
                 <p class="section-subtitle">Гибкие тарифы для проектов любого масштаба</p>
             </div>
             <div class="pricing-grid">
-                <!-- Starter Plan -->
                 <div class="pricing-card">
                     <div class="plan-name">Starter</div>
                     <div class="plan-price">299₽</div>
@@ -152,8 +191,6 @@
                     </ul>
                     <button class="plan-btn">Выбрать план</button>
                 </div>
-
-                <!-- Business Plan -->
                 <div class="pricing-card featured">
                     <div class="popular-badge">Популярный</div>
                     <div class="plan-name">Business</div>
@@ -171,8 +208,6 @@
                     </ul>
                     <button class="plan-btn primary">Выбрать план</button>
                 </div>
-
-                <!-- Professional Plan -->
                 <div class="pricing-card">
                     <div class="plan-name">Professional</div>
                     <div class="plan-price">1299₽</div>
@@ -192,8 +227,6 @@
                 </div>
             </div>
         </section>
-
-        <!-- Additional Info Section -->
         <section class="section">
             <div class="section-header">
                 <h2 class="section-title">Дополнительные <span class="text-gradient">возможности</span></h2>
@@ -248,12 +281,9 @@
             </div>
         </section>
     </div>
-
-    <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-top">
-                <!-- Company Info -->
                 <div class="footer-company">
                     <a href="#" class="footer-logo">
                         <div class="footer-logo-container">
@@ -269,7 +299,6 @@
                         для
                         развития вашего бизнеса в интернете.
                     </p>
-
                     <div class="footer-contact-grid">
                         <div class="contact-item">
                             <i class="fas fa-map-marker-alt"></i>
@@ -288,7 +317,6 @@
                             <span>24/7 поддержка</span>
                         </div>
                     </div>
-
                     <div class="footer-social">
                         <a href="#" class="social-link" title="Telegram">
                             <i class="fab fa-telegram-plane"></i>
@@ -307,8 +335,6 @@
                         </a>
                     </div>
                 </div>
-
-                <!-- Services -->
                 <div class="footer-section">
                     <h3><i class="fas fa-server"></i> Услуги</h3>
                     <ul>
@@ -320,8 +346,6 @@
                         <li><a href="#"><i class="fas fa-search"></i> Домены</a></li>
                     </ul>
                 </div>
-
-                <!-- Support -->
                 <div class="footer-section">
                     <h3><i class="fas fa-headset"></i> Поддержка</h3>
                     <ul>
@@ -333,8 +357,6 @@
                         <li><a href="#"><i class="fas fa-video"></i> Обучение</a></li>
                     </ul>
                 </div>
-
-                <!-- Newsletter & Links -->
                 <div class="footer-section">
                     <h3><i class="fas fa-newspaper"></i> Новости</h3>
                     <ul>
@@ -343,21 +365,8 @@
                         <li><a href="#"><i class="fas fa-info-circle"></i> О компании</a></li>
                         <li><a href="#"><i class="fas fa-briefcase"></i> Карьера</a></li>
                     </ul>
-
-                    <!-- Newsletter form -->
-                    <div class="newsletter-section">
-                        <h4 class="section-title">Подписка на новости</h4>
-                        <p class="section-description">Получайте последние новости и специальные предложения</p>
-                        <form class="newsletter-form">
-                            <input type="email" placeholder="Ваш email" class="newsletter-input" required>
-                            <button type="submit" class="newsletter-btn">
-                                <i class="fas fa-paper-plane"></i>
-                            </button>
-                        </form>
-                    </div>
                 </div>
             </div>
-
             <div class="footer-bottom">
                 <div class="footer-bottom-content">
                     <div class="footer-copyright">
@@ -373,7 +382,6 @@
             </div>
         </div>
     </footer>
-
     <button class="scroll-to-top" title="Наверх">
         <i class="fas fa-arrow-up"></i>
     </button>

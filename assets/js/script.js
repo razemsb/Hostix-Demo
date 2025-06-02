@@ -1,10 +1,13 @@
+/*//////////////////////////////////////////////////////////////*/
+/* скрипты */
+/*//////////////////////////////////////////////////////////////*/
 'use strict';
 
 document.addEventListener('DOMContentLoaded', function() {
     initializeApp();
 });
 
-// Initialize all app functionality
+
 function initializeApp() {
     initNavbar();
     initSmoothScroll();
@@ -13,10 +16,10 @@ function initializeApp() {
     initCounters();
     initMobileMenu();
     initScrollToTop();
+    initUserMenu();
     fadeInPage();
 }
 
-// Navbar scroll effect
 function initNavbar() {
     const navbar = document.getElementById('navbar');
     
@@ -29,10 +32,10 @@ function initNavbar() {
     }
     
     window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Initial check
+    handleScroll(); 
 }
 
-// Smooth scroll for anchor links
+
 function initSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -41,7 +44,7 @@ function initSmoothScroll() {
                 e.preventDefault();
                 const target = document.querySelector(href);
                 if (target) {
-                    const offsetTop = target.offsetTop - 80; // Account for navbar height
+                    const offsetTop = target.offsetTop - 80; 
                     window.scrollTo({
                         top: offsetTop,
                         behavior: 'smooth'
@@ -51,7 +54,7 @@ function initSmoothScroll() {
         });
     });
 
-    // Logo click to top
+    
     const logo = document.querySelector('.logo');
     if (logo) {
         logo.addEventListener('click', function(e) {
@@ -64,7 +67,7 @@ function initSmoothScroll() {
     }
 }
 
-// Newsletter form handling
+
 function initNewsletterForm() {
     const form = document.querySelector('.newsletter-form');
     if (form) {
@@ -83,21 +86,21 @@ function initNewsletterForm() {
     }
 }
 
-// Email validation
+
 function isValidEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
 }
 
-// Show notification
+
 function showNotification(message, type = 'info') {
-    // Remove existing notifications
+    
     const existingNotification = document.querySelector('.notification');
     if (existingNotification) {
         existingNotification.remove();
     }
     
-    // Create notification element
+    
     const notification = document.createElement('div');
     notification.className = `notification notification-${type}`;
     notification.innerHTML = `
@@ -110,7 +113,7 @@ function showNotification(message, type = 'info') {
         </div>
     `;
     
-    // Add styles
+    
     notification.style.cssText = `
         position: fixed;
         top: 100px;
@@ -150,15 +153,15 @@ function showNotification(message, type = 'info') {
     closeBtn.addEventListener('mouseenter', () => closeBtn.style.opacity = '1');
     closeBtn.addEventListener('mouseleave', () => closeBtn.style.opacity = '0.8');
     
-    // Add to page
+    
     document.body.appendChild(notification);
     
-    // Animate in
+    
     setTimeout(() => {
         notification.style.transform = 'translateX(0)';
     }, 10);
     
-    // Handle close
+    
     function closeNotification() {
         notification.style.transform = 'translateX(100%)';
         setTimeout(() => {
@@ -170,11 +173,11 @@ function showNotification(message, type = 'info') {
     
     closeBtn.addEventListener('click', closeNotification);
     
-    // Auto close after 5 seconds
+    
     setTimeout(closeNotification, 5000);
 }
 
-// Initialize animations on scroll
+
 function initAnimations() {
     const observerOptions = {
         threshold: 0.1,
@@ -189,7 +192,7 @@ function initAnimations() {
         });
     }, observerOptions);
     
-    // Observe animation elements
+    
     document.querySelectorAll('.feature-card, .pricing-card, .info-card, .stat-item').forEach(el => {
         el.style.cssText += `
             opacity: 0;
@@ -199,7 +202,7 @@ function initAnimations() {
         observer.observe(el);
     });
     
-    // Add animate-in styles
+    
     const style = document.createElement('style');
     style.textContent = `
         .animate-in {
@@ -210,7 +213,7 @@ function initAnimations() {
     document.head.appendChild(style);
 }
 
-// Counter animation for stats
+
 function initCounters() {
     const counters = document.querySelectorAll('.stat-number');
     
@@ -237,7 +240,7 @@ function initCounters() {
                 const counter = entry.target;
                 const text = counter.textContent;
                 
-                // Parse numbers from text
+                
                 if (text.includes('99.9%')) {
                     counter.textContent = '80.0%';
                     setTimeout(() => {
@@ -253,7 +256,7 @@ function initCounters() {
                         }, 20);
                     }, 200);
                 } else if (text.includes('24/7')) {
-                    // No animation for 24/7
+                    
                 }
                 
                 observer.unobserve(counter);
@@ -264,7 +267,7 @@ function initCounters() {
     counters.forEach(counter => observer.observe(counter));
 }
 
-// Mobile menu functionality
+
 function initMobileMenu() {
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const navMenu = document.getElementById('navMenu');
@@ -272,56 +275,68 @@ function initMobileMenu() {
     if (mobileMenuBtn && navMenu) {
         let isMenuOpen = false;
         
-        mobileMenuBtn.addEventListener('click', () => {
+        console.log('Mobile menu initialized'); 
+        
+        mobileMenuBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            
             isMenuOpen = !isMenuOpen;
             
             if (isMenuOpen) {
-                navMenu.style.cssText = `
-                    display: flex;
-                    position: fixed;
-                    top: 80px;
-                    left: 0;
-                    width: 100%;
-                    background: var(--glass);
-                    backdrop-filter: blur(20px);
-                    flex-direction: column;
-                    padding: 2rem;
-                    gap: 1rem;
-                    border-bottom: 1px solid var(--border-light);
-                    transform: translateY(-100%);
-                    transition: transform 0.3s ease;
-                `;
-                
-                setTimeout(() => {
-                    navMenu.style.transform = 'translateY(0)';
-                }, 10);
-                
+                navMenu.classList.add('mobile-active');
                 mobileMenuBtn.innerHTML = '<i class="fas fa-times"></i>';
+                document.body.style.overflow = 'hidden';
             } else {
-                navMenu.style.transform = 'translateY(-100%)';
-                setTimeout(() => {
-                    navMenu.style.display = '';
-                    navMenu.style.cssText = '';
-                }, 300);
+                navMenu.classList.remove('mobile-active');
                 mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                document.body.style.overflow = '';
             }
         });
         
-        // Close menu on link click
+        
         navMenu.addEventListener('click', (e) => {
-            if (e.target.tagName === 'A' && isMenuOpen) {
-                mobileMenuBtn.click();
+            if (e.target.classList.contains('nav-link') && isMenuOpen) {
+                isMenuOpen = false;
+                navMenu.classList.remove('mobile-active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                document.body.style.overflow = '';
             }
+        });
+        
+        
+        document.addEventListener('click', (e) => {
+            if (isMenuOpen && !navMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                isMenuOpen = false;
+                navMenu.classList.remove('mobile-active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                document.body.style.overflow = '';
+            }
+        });
+        
+        
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768 && isMenuOpen) {
+                isMenuOpen = false;
+                navMenu.classList.remove('mobile-active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                document.body.style.overflow = '';
+            }
+        });
+    } else {
+        console.error('Mobile menu elements not found:', {
+            mobileMenuBtn: !!mobileMenuBtn,
+            navMenu: !!navMenu
         });
     }
 }
 
-// Scroll to top functionality
+
 function initScrollToTop() {
     const scrollToTopBtn = document.querySelector('.scroll-to-top');
     
     if (scrollToTopBtn) {
-        // Show/hide button on scroll
+        
         window.addEventListener('scroll', function() {
             const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
             
@@ -332,7 +347,7 @@ function initScrollToTop() {
             }
         }, { passive: true });
         
-        // Click handler
+        
         scrollToTopBtn.addEventListener('click', function() {
             window.scrollTo({
                 top: 0,
@@ -348,7 +363,136 @@ function initScrollToTop() {
     }
 }
 
-// Utility function to handle page transitions
+
+function initUserMenu() {
+    const userProfile = document.querySelector('.user-profile');
+    const userDropdown = document.querySelector('.user-dropdown');
+    
+    if (userProfile && userDropdown) {
+        let isDropdownOpen = false;
+        let closeTimeout;
+        let isMobile = window.innerWidth <= 768;
+        
+        
+        window.addEventListener('resize', () => {
+            isMobile = window.innerWidth <= 768;
+        });
+        
+        
+        if (isMobile || 'ontouchstart' in window) {
+            userProfile.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                isDropdownOpen = !isDropdownOpen;
+                
+                if (isDropdownOpen) {
+                    userDropdown.style.opacity = '1';
+                    userDropdown.style.visibility = 'visible';
+                    userDropdown.style.transform = window.innerWidth <= 480 ? 
+                        'translateX(-50%) translateY(0)' : 'translateY(0)';
+                } else {
+                    userDropdown.style.opacity = '0';
+                    userDropdown.style.visibility = 'hidden';
+                    userDropdown.style.transform = window.innerWidth <= 480 ? 
+                        'translateX(-50%) translateY(-10px)' : 'translateY(-10px)';
+                }
+            });
+            
+            
+            document.addEventListener('click', (e) => {
+                if (!userProfile.contains(e.target) && isDropdownOpen) {
+                    isDropdownOpen = false;
+                    userDropdown.style.opacity = '0';
+                    userDropdown.style.visibility = 'hidden';
+                    userDropdown.style.transform = window.innerWidth <= 480 ? 
+                        'translateX(-50%) translateY(-10px)' : 'translateY(-10px)';
+                }
+            });
+        } else {
+            
+            userProfile.addEventListener('mouseenter', () => {
+                clearTimeout(closeTimeout);
+                isDropdownOpen = true;
+                userDropdown.style.opacity = '1';
+                userDropdown.style.visibility = 'visible';
+                userDropdown.style.transform = 'translateY(0)';
+            });
+            
+            userProfile.addEventListener('mouseleave', () => {
+                closeTimeout = setTimeout(() => {
+                    isDropdownOpen = false;
+                    userDropdown.style.opacity = '0';
+                    userDropdown.style.visibility = 'hidden';
+                    userDropdown.style.transform = 'translateY(-10px)';
+                }, 200);
+            });
+        }
+        
+        
+        const dropdownItems = userDropdown.querySelectorAll('.dropdown-item');
+        dropdownItems.forEach(item => {
+            item.addEventListener('click', (e) => {
+                e.preventDefault();
+                const text = item.querySelector('span').textContent;
+                
+                
+                switch(text) {
+                    case 'Мой профиль':
+                        showNotification('Переход в профиль пользователя...', 'info');
+                        break;
+                    case 'Настройки':
+                        showNotification('Открытие настроек аккаунта...', 'info');
+                        break;
+                    case 'Мои услуги':
+                        showNotification('Переход к управлению услугами...', 'info');
+                        break;
+                    case 'Биллинг':
+                        showNotification('Открытие раздела биллинга...', 'info');
+                        break;
+                    case 'Поддержка':
+                        showNotification('Переход в службу поддержки...', 'info');
+                        break;
+                    case 'Выйти':
+                        handleLogout();
+                        break;
+                }
+                
+                
+                isDropdownOpen = false;
+                userDropdown.style.opacity = '0';
+                userDropdown.style.visibility = 'hidden';
+                userDropdown.style.transform = window.innerWidth <= 480 ? 
+                    'translateX(-50%) translateY(-10px)' : 'translateY(-10px)';
+            });
+        });
+    }
+}
+
+
+function handleLogout() {
+    
+    if (confirm('Вы уверены, что хотите выйти из аккаунта?')) {
+        showNotification('Выход из аккаунта...', 'info');
+        
+        
+        setTimeout(() => {
+            showNotification('Вы успешно вышли из аккаунта', 'success');
+            
+            
+            
+            
+            
+            
+            
+            setTimeout(() => {
+                window.location.reload();
+            }, 1500);
+        }, 1000);
+    }
+}
+
+
 function fadeInPage() {
     document.body.style.opacity = '0';
     document.body.style.transition = 'opacity 0.3s ease';
@@ -358,10 +502,10 @@ function fadeInPage() {
     });
 }
 
-// Initialize page fade
+
 fadeInPage();
 
-// Export functions for potential external use
+
 window.EnigmaCloud = {
     showNotification,
     initializeApp
