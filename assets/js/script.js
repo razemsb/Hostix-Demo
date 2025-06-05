@@ -442,7 +442,7 @@ function initUserMenu() {
                         showNotification('Переход на главную страницу...', 'info');
                         setTimeout(() => {
                             window.location.href = href;
-                        }, 700);
+                        }, 400);
                         break;
                         
                     case 'accountPage':
@@ -450,7 +450,7 @@ function initUserMenu() {
                         showNotification('Переход в профиль пользователя...', 'info');
                         setTimeout(() => {
                             window.location.href = accountHref;
-                        }, 700);
+                        }, 400);
                         break;
                         
                     case 'servicesPage':

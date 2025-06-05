@@ -1,5 +1,8 @@
-<?php include_once 'assets/includes/header.php'; ?>
-
+<?php
+require_once 'assets/config/config.php';
+$current_page = 'Главная';
+include_once 'assets/includes/header.php'; 
+?>
 <section class="hero">
     <div class="hero-content">
         <h1>Профессиональный <span class="text-gradient">хостинг</span> нового поколения</h1>

@@ -1,0 +1,3 @@
+RewriteEngine On
+AddDefaultCharset UTF-8
+ErrorDocument 404 /Hostix-Demo/404.php
